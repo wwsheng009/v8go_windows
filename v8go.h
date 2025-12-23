@@ -119,6 +119,7 @@ typedef const v8ScriptCompilerCachedData *ScriptCompilerCachedDataPtr;
   extern void IsolatePerformMicrotaskCheckpoint(IsolatePtr ptr);
   extern void IsolateDispose(IsolatePtr ptr);
   extern void IsolateTerminateExecution(IsolatePtr ptr);
+  extern int IsolateIsExecutionTerminating(IsolatePtr ptr);
   extern IsolateHStatistics IsolationGetHeapStatistics(IsolatePtr ptr);
 
   extern ValuePtr IsolateThrowException(IsolatePtr iso, ValuePtr value);

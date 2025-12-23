@@ -177,3 +177,10 @@ func (i *Isolate) getCallback(ref int) FunctionCallback {
 	defer i.cbMutex.RUnlock()
 	return i.cbs[ref]
 }
+
+// IsExecutionTerminating returns whether V8 is currently terminating
+// Javascript execution. If true, there are still JavaScript frames
+// on the stack and the termination exception is still active.
+func (i *Isolate) IsExecutionTerminating() bool {
+	return C.IsolateIsExecutionTerminating(i.ptr) == 1
+}

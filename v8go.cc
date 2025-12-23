@@ -296,6 +296,11 @@ extern "C"
     iso->TerminateExecution();
   }
 
+  int IsolateIsExecutionTerminating(IsolatePtr ptr) {
+    Isolate *iso = static_cast<Isolate *>(ptr);
+    return iso->IsExecutionTerminating();
+  }
+
   IsolateHStatistics IsolationGetHeapStatistics(IsolatePtr ptr)
   {
     if (ptr == nullptr)
